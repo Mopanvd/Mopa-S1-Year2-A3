@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>City Photo Classification Game</title>
+    <!-- Link stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>City Photo Classification Game</h1>
+    <p class="intro">Drag the 9 images below to the corresponding city tags on the right to classify them correctly.</p>
+
+    <div class="game-container">
+        <!-- Grid container for images -->
+        <div class="grid-container" id="imageGrid"></div>
+        <!-- Sidebar with city drop zones -->
+        <div class="sidebar" id="cityList">
+            <div class="city-tag" data-city="北京">Beijing</div>
+            <div class="city-tag" data-city="上海">Shanghai</div>
+            <div class="city-tag" data-city="重庆">Chongqing</div>
+        </div>
+    </div>
+
+    <!-- Feedback message -->
+    <div id="message" class="message">Drag images to correct cities.</div>
+
+    <!-- Game logic script -->
+    <script src="java.js"></script>
+</body>
+</html> <!-- End of HTML document -->
