@@ -22,6 +22,8 @@ function shuffle(array) {
 function initGame() {
     const gridContainer = document.getElementById('imageGrid');
     const shuffledData = shuffle([...gameData]);
+    const correctSound = document.getElementById('correctSound');
+    const incorrectSound = document.getElementById('incorrectSound');
 
     // Generate 3x3 grid of images
     shuffledData.forEach(item => {
@@ -76,12 +78,21 @@ function initGame() {
 
             const correctCity = draggedItem.dataset.city;
             const targetCity = this.dataset.city;
+            const card = draggedItem;
 
             // Check if answer is correct
             if (correctCity === targetCity) {
+                // Play correct sound
+                correctSound.currentTime = 0;
+                correctSound.play();
+                
+                // Correct answer - yellow flash on tag
+                this.classList.add('correct-flash');
+                setTimeout(() => this.classList.remove('correct-flash'), 600);
+                
                 messageBox.textContent = "Correct! 🎉";
                 messageBox.className = "message correct";
-                draggedItem.style.visibility = 'hidden';
+                card.style.visibility = 'hidden';
 
                 // Check if all items are classified
                 const allHidden = Array.from(gridContainer.children).every(card => card.style.visibility === 'hidden');
@@ -89,8 +100,20 @@ function initGame() {
                     messageBox.textContent = "Awesome! You completed all classifications! 👏";
                 }
             } else {
+                // Play incorrect sound
+                incorrectSound.currentTime = 0;
+                incorrectSound.play();
+                
+                // Wrong answer - red flash on tag and bounce back card
+                this.classList.add('wrong-flash');
+                setTimeout(() => this.classList.remove('wrong-flash'), 600);
+                
                 messageBox.textContent = "Wrong! Try again! ❌";
                 messageBox.className = "message wrong";
+                
+                // Add bounce back animation to card
+                card.classList.add('bounce-back');
+                setTimeout(() => card.classList.remove('bounce-back'), 500);
             }
         });
     });
