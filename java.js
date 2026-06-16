@@ -1,14 +1,14 @@
 // 1. Prepare game data with 9 images (3 cities, 3 images per city)
 const gameData = [
-    { id: 1, city: '北京', img: 'Beijing1.jpg' }, // Beijing landmark
-    { id: 2, city: '北京', img: 'Beijing2.jpg' },
-    { id: 3, city: '北京', img: 'Beijing3.jpg' },
-    { id: 4, city: '上海', img: 'Shanghai1.jpg' }, // Shanghai landmark
-    { id: 5, city: '上海', img: 'Shanghai2.jpg' },
-    { id: 6, city: '上海', img: 'Shanghai3.jpg' },
-    { id: 7, city: '重庆', img: 'Chongqing1.jpg' }, // Chongqing landmark
-    { id: 8, city: '重庆', img: 'Chongqing2.jpg' },
-    { id: 9, city: '重庆', img: 'Chongqing3.jpg' }
+    { id: 1, city: 'Beijing', img: 'Beijing1.jpg' }, // Beijing landmark
+    { id: 2, city: 'Beijing', img: 'Beijing2.jpg' },
+    { id: 3, city: 'Beijing', img: 'Beijing3.jpg' },
+    { id: 4, city: 'Shanghai', img: 'Shanghai1.jpg' }, // Shanghai landmark
+    { id: 5, city: 'Shanghai', img: 'Shanghai2.jpg' },
+    { id: 6, city: 'Shanghai', img: 'Shanghai3.jpg' },
+    { id: 7, city: 'Chongqing', img: 'Chongqing1.jpg' }, // Chongqing landmark
+    { id: 8, city: 'Chongqing', img: 'Chongqing2.jpg' },
+    { id: 9, city: 'Chongqing', img: 'Chongqing3.jpg' }
 ];
 
 let draggedItem = null;
